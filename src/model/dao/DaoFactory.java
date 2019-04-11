@@ -1,0 +1,14 @@
+package model.dao;
+
+import model.dao.impl.SellerDaoJDBC;
+
+public class DaoFactory {
+	
+	//A injeção de dependência pode ser feita por meio do padrão de projeto Factory 
+	
+	public static SellerDao createSellerDao()
+	{
+		return new SellerDaoJDBC();
+		
+	}
+}
