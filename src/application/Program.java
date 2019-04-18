@@ -23,6 +23,9 @@ public class Program {
 		   Call o pattern Factory -> evitando que o progrma não conhece a implementação,
 		   apenas conhece a interface
 		*/
+		
+		System.out.println("");
+		System.out.println("==== TEST1: seller findById ====");
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
