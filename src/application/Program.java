@@ -1,6 +1,7 @@
 package application;
 
 import java.util.Date;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -20,7 +21,7 @@ public class Program {
 		System.out.println(objSel);
 		
 		/*
-		   Call o pattern Factory -> evitando que o progrma não conhece a implementação,
+		   Call o pattern Factory -> evitando que o programa não conhece a implementação,
 		   apenas conhece a interface
 		*/
 		
@@ -29,6 +30,15 @@ public class Program {
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
+		
+		System.out.println("\n==== TEST2: seller findByDepartment ====");
+		Department department = new Department(2,null);
+		List<Seller> list = sellerDao.findByDepartment(department);
+		for(Seller sel: list)
+		{
+			System.out.println(sel);
+		}
+		
 		
 	}
 
